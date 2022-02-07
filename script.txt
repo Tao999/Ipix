@@ -1,0 +1,5 @@
+﻿set myVariable Valeur de "myVariable"
+:loop
+	print myVariable
+	set myVariable La valeur n'est plus la même
+goto loop

@@ -5,8 +5,6 @@
     set temp 0
 
     set counter 0
-    set inc 1
-    set max 10
 
 
     //affichage des 3 premiers nombre de fibonnacci
@@ -21,9 +19,9 @@
     mov prev temp
 
     print next
-    equ end counter max
-    add counter inc counter
+    equ end counter $10
+    add counter $1 counter
 
-    goto loop
+goto loop
 
 :end

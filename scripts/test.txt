@@ -1,0 +1,9 @@
+set var 0
+add var $1 $2
+print var
+
+add var var $1
+print var
+
+add var $1 var
+print var

@@ -23,20 +23,30 @@ namespace Ipix.Instructions.Jumps
                 Ipix.Stop("Erreur nombre de paramètre incorrect, " + nbArgs + " attendu, 0 donné");
                 return;
             }
-            if (!Ipix.vars.ContainsKey(tok[1]))
+            if (!Ipix.vars.ContainsKey(tok[1]) && !tok[1].StartsWith("$"))
             {
                 Ipix.Stop("La variable \"" + tok[1] + "\"n'existe pas");
                 return;
             }
-            if (!Ipix.vars.ContainsKey(tok[2]))
+            if (!Ipix.vars.ContainsKey(tok[2]) && !tok[2].StartsWith("$"))
             {
                 Ipix.Stop("La variable \"" + tok[2] + "\"n'existe pas");
                 return;
             }
 
             string label = tok[0];
-            string var1 = Ipix.vars[tok[1]];
-            string var2 = Ipix.vars[tok[2]];
+            string var1, var2;
+
+            string target = tok[0];
+            if (tok[1].StartsWith("$"))
+                var1 = tok[1].Replace("$", "");
+            else
+                var1 = Ipix.vars[tok[1]].Replace(",", ".");
+
+            if (tok[2].StartsWith("$"))
+                var2 = tok[2].Replace("$", "");
+            else
+                var2 = Ipix.vars[tok[2]].Replace(",", ".");
 
             double d1, d2;
 

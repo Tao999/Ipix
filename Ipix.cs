@@ -131,7 +131,7 @@ namespace Ipix
                         lables.Add(label, finalValue.Count);
                     }
                     else
-                        finalValue.Add(l);
+                        finalValue.Add(l.Split("//", 2)[0].Trim());
             }
 
             return finalValue.ToArray();

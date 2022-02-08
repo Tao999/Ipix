@@ -32,6 +32,7 @@
 # Fonctionnement
 Interpreteur :
 - Commence la programme au label "main"
+- Des constantes peuvent être utilisé, elles commencent pas "$". Exemple : add var1 $10 var2
 - Instructions : Stock toutes les instructions
 - vars : Stock toutes les variables
 - labels : Stock toutes les positions des labels

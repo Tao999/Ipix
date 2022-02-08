@@ -1,5 +1,11 @@
-﻿set myVariable Valeur de "myVariable"
-:loop
-	print myVariable
-	set myVariable La valeur n'est plus la même
-goto loop
+﻿set double1 10,5
+set double2 10.5
+set double3 5
+
+set résultat 0
+
+add résultat double1 double3
+print résultat
+
+add résultat double2 double3
+print résultat

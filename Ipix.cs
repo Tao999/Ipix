@@ -1,4 +1,5 @@
-﻿using Ipix.Instructions.System;
+﻿using Ipix.Instructions.Operators;
+using Ipix.Instructions.System;
 using Ipix.Tools;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,10 @@ namespace Ipix
             instructions.Add("print", new Print());
             instructions.Add("end", new End());
             instructions.Add("goto", new Goto());
+            instructions.Add("add", new Add());
+            instructions.Add("sub", new Sub());
+            instructions.Add("mul", new Sub());
+            instructions.Add("div", new Div());
 
 
         }

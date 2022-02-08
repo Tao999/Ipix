@@ -40,24 +40,39 @@ namespace Ipix
             instructions.Add("equ", new Equ());
             instructions.Add("sup", new Sup());
             instructions.Add("esp", new Esp());
+            instructions.Add("mov", new Mov());
 
 
         }
 
         public void Run()
         {
-            string[] program = LoadFile(Console.ReadLine());
-            if(program == null)
+            while (true)
             {
-                Stop("Le fichier proposé n'existe pas, ou n'est pas valide");
-            }
-            else
-            {
-                // le programme s'arrête si on a fini le fichier, ou que le statut de l'appli est sur "stop"
-                for (linePointer = 0; (linePointer < program.Length) && (status == STATUS.RUNNING); linePointer++)
+                Console.WriteLine("enter file script : ");
+                string[] program = LoadFile(Console.ReadLine());
+                if (program == null)
                 {
-                    string line = program[linePointer].Trim();
-                    ProcInstr(line);
+                    Stop("Le fichier proposé n'existe pas, ou n'est pas valide");
+                }
+                else
+                {
+                    //on lance le programme au main, si il y en a un
+                    if (lables.ContainsKey("main"))
+                    {
+                        linePointer = lables["main"];
+                    }
+                    // le programme s'arrête si on a fini le fichier, ou que le statut de l'appli est sur "stop"
+                    for (linePointer = 0; (linePointer < program.Length) && (status == STATUS.RUNNING); linePointer++)
+                    {
+                        string line = program[linePointer].Trim();
+                        ProcInstr(line);
+                    }
+                    Console.WriteLine("Fin du programme atteint");
+
+                    vars.Clear();
+                    lables.Clear();
+                    linePointer = 0;
                 }
             }
         }

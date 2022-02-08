@@ -1,0 +1,29 @@
+﻿:main
+    //initialisation des variables
+    set prev 1
+    set next 1
+    set temp 0
+
+    set counter 0
+    set inc 1
+    set max 10
+
+
+    //affichage des 3 premiers nombre de fibonnacci
+    print counter
+    print next
+    print next
+    goto loop
+
+:loop
+    mov temp next
+    add next prev next
+    mov prev temp
+
+    print next
+    equ end counter max
+    add counter inc counter
+
+    goto loop
+
+:end

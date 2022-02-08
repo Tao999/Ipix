@@ -27,9 +27,11 @@
  - [x] `set <varName> <value>` -> Assigne "value" à la variable "varName"
  - [x] `print <var>` -> Affiche la valeur retournée par "arg"
  - [x] `end` -> Stop le programme.
+ - [x] `mov <var1> <var2>` -> assigne la valeur de var2 à var1
 
 # Fonctionnement
 Interpreteur :
+- Commence la programme au label "main"
 - Instructions : Stock toutes les instructions
 - vars : Stock toutes les variables
 - labels : Stock toutes les positions des labels

@@ -1,11 +1,15 @@
-﻿set double1 10,5
-set double2 10.5
+﻿set double1 2
+set double2 1
 set double3 5
 
-set résultat 0
 
-add résultat double1 double3
-print résultat
 
-add résultat double2 double3
+sup saut double1 double2
+set résultat c'est inf
+goto fin
+
+:saut
+set résultat c'est sup
+
+:fin
 print résultat

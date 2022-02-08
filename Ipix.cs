@@ -1,4 +1,5 @@
-﻿using Ipix.Instructions.Operators;
+﻿using Ipix.Instructions.Jumps;
+using Ipix.Instructions.Operators;
 using Ipix.Instructions.System;
 using Ipix.Tools;
 using System;
@@ -36,6 +37,9 @@ namespace Ipix
             instructions.Add("sub", new Sub());
             instructions.Add("mul", new Sub());
             instructions.Add("div", new Div());
+            instructions.Add("equ", new Equ());
+            instructions.Add("sup", new Sup());
+            instructions.Add("esp", new Esp());
 
 
         }

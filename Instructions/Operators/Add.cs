@@ -47,11 +47,11 @@ namespace Ipix.Instructions.Operators
 
             
 
-            double f1, f2;
+            double d1, d2;
 
-            if (double.TryParse(var1, NumberStyles.Any, CultureInfo.InvariantCulture, out f1) && double.TryParse(var2, NumberStyles.Any, CultureInfo.InvariantCulture, out f2))
+            if (double.TryParse(var1, NumberStyles.Any, CultureInfo.InvariantCulture, out d1) && double.TryParse(var2, NumberStyles.Any, CultureInfo.InvariantCulture, out d2))
             {
-                Ipix.vars[target] = (f1 + f2).ToString().Replace(",", ".");
+                Ipix.vars[target] = (d1 + d2).ToString().Replace(",", ".");
             }
             else
             {

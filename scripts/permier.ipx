@@ -1,0 +1,33 @@
+
+:main
+    set i 0
+    set a 0
+    :loop
+
+        //ici on cherche si i est divisible par b
+        mov a i
+        set b 3
+        goto estdivisible
+            :estdivis
+            print i
+            :nondivis
+
+
+        //on cherche plus
+
+        equ end i $100
+        add i $1 i
+        goto loop
+
+:end
+end
+
+
+:estdivisible //a est-il divisible par b ?
+    sup edsuite b a
+    sub a a b
+    goto estdivisible
+
+    :edsuite
+        equ estdivis a $0
+        goto nondivis

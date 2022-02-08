@@ -57,6 +57,7 @@ namespace Ipix
                 }
                 else
                 {
+                    status = STATUS.RUNNING;
                     //on lance le programme au main, si il y en a un
                     if (lables.ContainsKey("main"))
                     {
@@ -118,8 +119,8 @@ namespace Ipix
             List<string> finalValue = new List<string>();
             foreach (string line in lines)
             {
-                string l = line.Trim();
-                if (!(l.StartsWith("//") || l.Equals("")))
+                string l = line.Trim().Split("//", 2)[0].Trim();
+                if (!l.Equals(""))
                     if (l.StartsWith(":"))
                     {
                         string label = l.Split(":", 2)[1].Trim();
@@ -131,7 +132,7 @@ namespace Ipix
                         lables.Add(label, finalValue.Count);
                     }
                     else
-                        finalValue.Add(l.Split("//", 2)[0].Trim());
+                        finalValue.Add(l);
             }
 
             return finalValue.ToArray();
